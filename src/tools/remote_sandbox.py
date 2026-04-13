@@ -16,7 +16,7 @@ from dataclasses import dataclass
 from typing import Any
 
 
-DEFAULT_REMOTE_HOST = "gersum@100.101.234.123"
+DEFAULT_REMOTE_HOST = "trp-gpt5"
 DEFAULT_REMOTE_DAB_PATH = "/shared/DataAgentBench"
 DEFAULT_REMOTE_PYTHON = "/shared/DataAgentBench/oracle_forge_v3/venv/bin/python"
 

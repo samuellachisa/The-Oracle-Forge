@@ -43,7 +43,7 @@ tmux -S /shared/tmux/oracle-forge.sock list-windows -t oracle-forge-gpt5
 Attach to the live team session:
 
 ```bash
-cd 
+tmux -S /shared/tmux/oracle-forge.sock attach -t oracle-forge-gpt5
 ```
 
 ## 4. What You Should See
@@ -64,6 +64,27 @@ What each window is for:
   The Oracle Forge workspace at `/shared/DataAgentBench/oracle_forge_v3`
 - `toolbox`
   The MCP Toolbox server running with the shared config
+
+## 4.1 Switching Windows
+
+To switch between windows after you've attached to the shared session (interactive):
+
+```text
+Prefix (default: Ctrl-b), then press the window number (1, 2, 3)
+Prefix then `n` : next window
+Prefix then `p` : previous window
+Prefix then `w` : show window list and choose
+```
+
+If you need to switch the active window from another shell (without attaching), use:
+
+```bash
+tmux -S /shared/tmux/oracle-forge.sock select-window -t oracle-forge-gpt5:1
+# or by window name
+tmux -S /shared/tmux/oracle-forge.sock select-window -t oracle-forge-gpt5:agent
+```
+
+If your tmux prefix has been changed from the default, substitute that key for `Ctrl-b` above.
 
 ## 5. Quick Validation Commands
 
