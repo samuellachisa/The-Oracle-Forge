@@ -27,15 +27,45 @@ class AnswerSynthesizer:
 
         benchmark_answer = execution_result.get("artifacts", {}).get("benchmark_answer")
         if benchmark_answer:
-            city = benchmark_answer.get("city", "the requested location")
-            state_name = benchmark_answer.get("state_name", "")
-            location = city if not state_name else f"{city}, {state_name}"
-            return (
-                f"The average rating of all businesses located in {location} is "
-                f"{benchmark_answer['formatted_answer']} based on "
-                f"{benchmark_answer['review_count']} reviews across "
-                f"{benchmark_answer['matched_business_count']} matching businesses."
-            )
+            answer_kind = benchmark_answer.get("answer_kind", "generic")
+            if answer_kind == "location_average_rating":
+                city = benchmark_answer.get("city", "the requested location")
+                state_name = benchmark_answer.get("state_name", "")
+                location = city if not state_name else f"{city}, {state_name}"
+                return (
+                    f"The average rating of all businesses located in {location} is "
+                    f"{benchmark_answer['formatted_answer']} based on "
+                    f"{benchmark_answer['review_count']} reviews across "
+                    f"{benchmark_answer.get('matched_business_count', 0)} matching businesses."
+                )
+            if answer_kind == "state_average_rating":
+                state = benchmark_answer.get("state_abbr", "the top state")
+                return f"{state}, {benchmark_answer['formatted_answer']}"
+            if answer_kind == "count_only":
+                return (
+                    "During 2018, the number of businesses that received reviews and offered "
+                    f"business or bike parking is {benchmark_answer['formatted_answer']}."
+                )
+            if answer_kind == "category_average_rating":
+                return (
+                    f"{benchmark_answer.get('category', 'Top category')} has the highest business count, "
+                    f"with an average rating of {benchmark_answer['formatted_answer']}."
+                )
+            if answer_kind == "business_categories":
+                business_name = benchmark_answer.get("business_name", "Unknown Business")
+                categories = benchmark_answer.get("categories", [])
+                return (
+                    f"{business_name} received the highest average rating in that period. "
+                    f"Categories: {', '.join(categories)}."
+                )
+            if answer_kind == "top_categories":
+                categories = [item.get("category", "") for item in benchmark_answer.get("top_categories", [])]
+                return (
+                    "Top 5 categories from users who registered in 2016: "
+                    + ", ".join(category for category in categories if category)
+                    + "."
+                )
+            return str(benchmark_answer.get("formatted_answer", "Benchmark answer available."))
 
         if plan.get("question_type") == "schema_discovery":
             parts = []

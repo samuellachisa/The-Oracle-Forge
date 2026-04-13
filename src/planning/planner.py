@@ -84,10 +84,26 @@ class Planner:
             question_type = "single_source_summary"
             expected_output_shape = "tabular_summary"
 
-        if benchmark_db_types and any(
-            token in question for token in ("average rating", "located in", "correlate", "declining", "pattern")
+        if benchmark_context.get("dataset") or (
+            benchmark_db_types
+            and any(
+                token in question
+                for token in (
+                    "average rating",
+                    "located in",
+                    "highest number of reviews",
+                    "business parking",
+                    "credit card payments",
+                    "offer wifi",
+                    "registered on yelp",
+                    "business categories",
+                )
+            )
         ):
-            question_type = "cross_db_aggregation" if len(required_sources) > 1 else "single_source_summary"
+            if any(token in question for token in ("how many", "count", "number of")):
+                question_type = "count_query"
+            else:
+                question_type = "cross_db_aggregation" if len(required_sources) > 1 else "single_source_summary"
             expected_output_shape = "benchmark_answer"
 
         planner_notes: list[str] = []

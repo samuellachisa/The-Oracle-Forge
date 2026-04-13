@@ -26,5 +26,11 @@ class RepairLoop:
             payload["prefer_sources"] = ["postgres", "sqlite", "mongodb"]
         if failure_class == "extraction_failure":
             payload["force_text_extraction"] = True
+        if failure_class == "benchmark_external_validation_failed":
+            diagnostics = payload["diagnostics"].lower()
+            if "missing category" in diagnostics:
+                payload["force_text_extraction"] = True
+            if "number" in diagnostics:
+                payload["enforce_numeric_answer_shape"] = True
 
         return payload

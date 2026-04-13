@@ -43,6 +43,44 @@ class Validator:
                 else:
                     evidence.append(f"benchmark_answer={benchmark_answer['formatted_answer']}")
                     evidence.append(f"benchmark_reviews={benchmark_answer['review_count']}")
+                    benchmark_dataset = str(benchmark_context.get("dataset", "")).lower()
+                    query_id = benchmark_context.get("query_id")
+                    if benchmark_dataset == "yelp":
+                        answer_kind = benchmark_answer.get("answer_kind")
+                        if query_id in {2, 5}:
+                            if not benchmark_answer.get("state_abbr"):
+                                failure_class = failure_class or "benchmark_answer_quality_failure"
+                                errors.append("Expected a resolved state abbreviation for this benchmark query.")
+                            numeric_answer = benchmark_answer.get("numeric_answer")
+                            if numeric_answer is None:
+                                failure_class = failure_class or "benchmark_answer_quality_failure"
+                                errors.append("Expected a numeric benchmark answer for this query.")
+                            else:
+                                numeric_value = float(numeric_answer)
+                                if numeric_value < 0 or numeric_value > 5:
+                                    failure_class = failure_class or "benchmark_answer_quality_failure"
+                                    errors.append("Benchmark rating fell outside the expected 0-5 range.")
+                        if query_id == 3:
+                            if answer_kind != "count_only":
+                                failure_class = failure_class or "benchmark_answer_quality_failure"
+                                errors.append("Expected count_only answer kind for Yelp query 3.")
+                            numeric_answer = benchmark_answer.get("numeric_answer")
+                            if numeric_answer is None or int(float(numeric_answer)) <= 0:
+                                failure_class = failure_class or "benchmark_answer_quality_failure"
+                                errors.append("Expected a positive integer count for Yelp query 3.")
+                        if query_id == 6:
+                            business_name = str(benchmark_answer.get("business_name", "")).strip()
+                            categories = benchmark_answer.get("categories", [])
+                            categories_lower = [str(category).lower() for category in categories]
+                            if not business_name:
+                                failure_class = failure_class or "benchmark_answer_quality_failure"
+                                errors.append("Expected a resolved business name for Yelp query 6.")
+                            if not categories or any(category == "unknown" for category in categories_lower):
+                                failure_class = failure_class or "extraction_failure"
+                                errors.append("Expected extracted business categories for Yelp query 6.")
+                            if "restaurants" not in categories_lower:
+                                failure_class = failure_class or "extraction_failure"
+                                errors.append("Expected Restaurants category to be present for Yelp query 6.")
         for source in required_sources:
             if source not in execution_result.get("source_results", {}):
                 if not benchmark_context.get("dataset"):

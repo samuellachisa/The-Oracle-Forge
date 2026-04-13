@@ -43,9 +43,21 @@ def main() -> None:
     print(result["final_answer"])
 
     if args.validate_answer:
-        validation = adapter.validate_answer(args.dataset, args.query_id, result["final_answer"])
-        print("\n[REMOTE DAB VALIDATE]")
-        print(json.dumps(validation, indent=2))
+        if result.get("validation", {}).get("status") == "passed":
+            validation = adapter.validate_answer(args.dataset, args.query_id, result["final_answer"])
+            print("\n[REMOTE DAB VALIDATE]")
+            print(json.dumps(validation, indent=2))
+        else:
+            print("\n[REMOTE DAB VALIDATE]")
+            print(
+                json.dumps(
+                    {
+                        "skipped": True,
+                        "reason": "Skipped because internal validation failed.",
+                    },
+                    indent=2,
+                )
+            )
 
 
 if __name__ == "__main__":

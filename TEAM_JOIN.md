@@ -43,7 +43,7 @@ tmux -S /shared/tmux/oracle-forge.sock list-windows -t oracle-forge-gpt5
 Attach to the live team session:
 
 ```bash
-tmux -S /shared/tmux/oracle-forge.sock attach -t oracle-forge-gpt5
+cd 
 ```
 
 ## 4. What You Should See

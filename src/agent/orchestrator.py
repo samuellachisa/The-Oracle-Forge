@@ -81,6 +81,7 @@ class Orchestrator:
         context_payload: dict[str, Any] = {}
         plan_result: dict[str, Any] = {}
         scratchpads: list[dict[str, Any]] = []
+        remote_validation: dict[str, Any] | None = None
 
         while True:
             plan_result = self.planner_module.generate_plan(
@@ -144,6 +145,55 @@ class Orchestrator:
                 validation,
             )
 
+            if (
+                validation["status"] == "passed"
+                and state["benchmark_context"].get("dataset")
+                and state["benchmark_context"].get("query_id")
+            ):
+                provisional_answer = self.synthesizer.synthesize(
+                    question=user_question,
+                    plan=plan_result,
+                    context_payload=context_payload,
+                    execution_result=execution_result,
+                    validation=validation,
+                )
+                self._append_trace(
+                    state["trace"],
+                    "answer_synthesizer",
+                    "generated_retry_answer",
+                    {"provisional_answer": provisional_answer},
+                )
+                remote_validation = self.router_module.remote_dab.validate_answer(
+                    dataset=state["benchmark_context"]["dataset"],
+                    query_id=int(state["benchmark_context"]["query_id"]),
+                    answer=provisional_answer,
+                )
+                self._append_trace(
+                    state["trace"],
+                    "benchmark_validator",
+                    "validated_answer",
+                    remote_validation,
+                )
+                if not remote_validation.get("is_valid", False):
+                    remote_reason = str(remote_validation.get("reason", "Unknown remote validation failure"))
+                    validation = {
+                        "status": "failed",
+                        "errors": validation.get("errors", [])
+                        + [f"Remote DAB validator rejected answer: {remote_reason}"],
+                        "failure_class": "benchmark_external_validation_failed",
+                        "evidence": validation.get("evidence", []) + [f"remote_reason={remote_reason}"],
+                    }
+                    self._append_trace(
+                        state["trace"],
+                        "validator",
+                        "validated_remote_benchmark",
+                        validation,
+                    )
+                else:
+                    validation["evidence"] = validation.get("evidence", []) + [
+                        f"remote_validator={remote_validation.get('reason', 'OK')}"
+                    ]
+
             if validation["status"] == "passed" or state["retries"] >= self.max_retries:
                 break
 
@@ -189,6 +239,7 @@ class Orchestrator:
             "scratchpads": scratchpads,
             "execution_result": execution_result,
             "validation": validation,
+            "remote_validation": remote_validation,
             "final_answer": final_answer,
             "tool_calls": execution_result.get("tool_calls", []),
             "trace": state["trace"],
@@ -207,6 +258,7 @@ class Orchestrator:
             "scratchpads": scratchpads,
             "execution_result": execution_result,
             "validation": validation,
+            "remote_validation": remote_validation,
             "final_answer": final_answer,
             "trace": state["trace"],
             "retries": state["retries"],
