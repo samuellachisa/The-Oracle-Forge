@@ -23,3 +23,22 @@ Link: #oracle-forge-gpt5
 Topic: Daily update — shipped/stuck/next
 Response: Internal only
 Follow-up needed: None
+
+
+## 2026-04-14
+Platform: LinkedIn
+Link: https://www.linkedin.com/posts/eyobed-feleke_agenticai-bigdata-aws-activity-7449744022258163712-T131
+Author: Eyobed Feleke
+Topic: Oracle Forge — building a production AI data agent
+Response: [to be updated]
+Follow-up needed: None
+
+
+## 2026-04-14
+Platform: LinkedIn
+Link: https://www.linkedin.com/feed/update/urn:li:share:7449902416717742080/
+Author: Bethelhem Abay
+Topic: The Best AI Model Only Scores 38% on a Data Benchmark. 
+       Here's Why That Number Changed How I Think About AI.
+Response: [to be updated]
+Follow-up needed: Monitor for comments and reactions
