@@ -8,8 +8,8 @@ Production-style data-agent workspace for the Oracle Forge challenge.
 |------|------|
 | Eyobed Feleke | Driver |
 | Gersum Asfaw | Driver |
-| Samuel | Intelligence Officer |
-| Kidane | Intelligence Officer |
+| Samuel Lachisa | Intelligence Officer |
+| Kidane Gebremedhin| Intelligence Officer |
 | Bethelhem Abay | Signal Corps |
 | Lidya Dagnew | Signal Corps |
 - Team `oracle-forge-gpt5` shared session: architecture review, mob approvals, and integration validation
