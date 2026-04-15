@@ -63,3 +63,15 @@ Decision:
 - approved
 Follow-ups:
 - expand the same validation pattern to the next dataset
+
+
+  ## Team Members and Roles
+
+| Name | Role |
+|------|------|
+| Eyobed Feleke | Driver |
+| Gersum Asfaw | Driver |
+| Samuel | Intelligence Officer |
+| Kidane | Intelligence Officer |
+| Bethelhem Abay | Signal Corps |
+| Lidya Dagnew | Signal Corps |
