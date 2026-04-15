@@ -4,9 +4,9 @@ This directory holds benchmark-evaluation-facing artifacts for Oracle Forge.
 
 Current implementation code lives in:
 
-- [src/eval/harness.py](/Users/gersumasfaw/week8_9/src/eval/harness.py)
-- [src/eval/score_tracker.py](/Users/gersumasfaw/week8_9/src/eval/score_tracker.py)
-- [src/eval/trace_logger.py](/Users/gersumasfaw/week8_9/src/eval/trace_logger.py)
+- [src/eval/harness.py](/shared/DataAgentBench/oracle_forge_v3/src/eval/harness.py)
+- [src/eval/score_tracker.py](/shared/DataAgentBench/oracle_forge_v3/src/eval/score_tracker.py)
+- [src/eval/trace_logger.py](/shared/DataAgentBench/oracle_forge_v3/src/eval/trace_logger.py)
 
 Use this directory for:
 

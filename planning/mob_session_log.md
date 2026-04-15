@@ -2,27 +2,6 @@
 
 Use this file to record AI-DLC gate approvals at mob sessions.
 
-## Template
-
-```md
-## YYYY-MM-DD
-Sprint: Sprint name or number
-Phase gate: Inception -> Construction | Construction -> Operations | Operations review
-Approved by: Name, Name, Name
-Driver: Name
-Hardest question: ...
-Answer: ...
-Evidence reviewed:
-- command / output / doc
-- command / output / doc
-Decision:
-- approved
-- approved with conditions
-- sent back for revision
-Follow-ups:
-- ...
-```
-
 ## Entries
 
 ## 2026-04-11
@@ -57,3 +36,30 @@ Decision:
 Follow-ups:
 - add additional benchmark query validations and log score progression
 - expand adversarial probes with observed failures and post-fix outcomes
+
+## 2026-04-13
+Sprint: Sprint 2 Scaling the 4 DB types
+Phase gate: Inception -> Construction
+Approved by: Team
+Driver: Gersum
+Hardest question: How do we verify SQLite data mapping?
+Answer: Through direct local sandbox testing and the eval regression harness.
+Evidence reviewed:
+- Inception doc 2
+Decision:
+- approved
+
+## 2026-04-13
+Sprint: Sprint 2 Yelp smoke closure
+Phase gate: Operations review
+Approved by: Team shared session participants (`oracle-forge-gpt5`)
+Driver: Gersum
+Hardest question: What proves the Yelp path is fully green now?
+Answer: The shared-server smoke pass shows all seven Yelp queries (`q1` through `q7`) returning `is_valid: true` in the official remote validator.
+Evidence reviewed:
+- `eval/score_log.md`
+- shared-server remote validator outputs for `q1` through `q7`
+Decision:
+- approved
+Follow-ups:
+- expand the same validation pattern to the next dataset

@@ -13,10 +13,10 @@ Each document should be short, concrete, and directly usable in an LLM context.
 
 Required subdirectories:
 
-- [architecture](/Users/gersumasfaw/week8_9/kb/architecture)
-- [domain](/Users/gersumasfaw/week8_9/kb/domain)
-- [evaluation](/Users/gersumasfaw/week8_9/kb/evaluation)
-- [corrections](/Users/gersumasfaw/week8_9/kb/corrections)
+- [architecture](/shared/DataAgentBench/oracle_forge_v3/kb/architecture)
+- [domain](/shared/DataAgentBench/oracle_forge_v3/kb/domain)
+- [evaluation](/shared/DataAgentBench/oracle_forge_v3/kb/evaluation)
+- [corrections](/shared/DataAgentBench/oracle_forge_v3/kb/corrections)
 
 Each subdirectory should keep:
 

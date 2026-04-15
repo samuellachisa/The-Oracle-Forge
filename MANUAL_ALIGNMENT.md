@@ -33,9 +33,9 @@ Implemented:
 
 Repo evidence:
 
-- [README.md](/Users/gersumasfaw/week8_9/README.md)
-- [TEAM_JOIN.md](/Users/gersumasfaw/week8_9/TEAM_JOIN.md)
-- [HEALTHCHECK.md](/Users/gersumasfaw/week8_9/HEALTHCHECK.md)
+- [README.md](/shared/DataAgentBench/oracle_forge_v3/README.md)
+- [TEAM_JOIN.md](/shared/DataAgentBench/oracle_forge_v3/TEAM_JOIN.md)
+- [HEALTHCHECK.md](/shared/DataAgentBench/oracle_forge_v3/HEALTHCHECK.md)
 
 ### DAB dataset presence
 
@@ -81,12 +81,12 @@ Implemented major runtime layers:
 
 Repo evidence:
 
-- [ARCHITECTURE_V3.md](/Users/gersumasfaw/week8_9/ARCHITECTURE_V3.md)
-- [src/agent/orchestrator.py](/Users/gersumasfaw/week8_9/src/agent/orchestrator.py)
-- [src/planning/planner.py](/Users/gersumasfaw/week8_9/src/planning/planner.py)
-- [src/agent/execution_router.py](/Users/gersumasfaw/week8_9/src/agent/execution_router.py)
-- [src/agent/validator.py](/Users/gersumasfaw/week8_9/src/agent/validator.py)
-- [src/agent/repair_loop.py](/Users/gersumasfaw/week8_9/src/agent/repair_loop.py)
+- [ARCHITECTURE_V3.md](/shared/DataAgentBench/oracle_forge_v3/ARCHITECTURE_V3.md)
+- [src/agent/orchestrator.py](/shared/DataAgentBench/oracle_forge_v3/src/agent/orchestrator.py)
+- [src/planning/planner.py](/shared/DataAgentBench/oracle_forge_v3/src/planning/planner.py)
+- [src/agent/execution_router.py](/shared/DataAgentBench/oracle_forge_v3/src/agent/execution_router.py)
+- [src/agent/validator.py](/shared/DataAgentBench/oracle_forge_v3/src/agent/validator.py)
+- [src/agent/repair_loop.py](/shared/DataAgentBench/oracle_forge_v3/src/agent/repair_loop.py)
 
 ### Real remote data access
 
@@ -107,7 +107,7 @@ Partially aligned.
 
 What exists:
 
-- [mcp/tools.yaml](/Users/gersumasfaw/week8_9/mcp/tools.yaml) defines PostgreSQL, SQLite, and MongoDB sources and tools
+- [mcp/tools.yaml](/shared/DataAgentBench/oracle_forge_v3/mcp/tools.yaml) defines PostgreSQL, SQLite, and MongoDB sources and tools
 - the repo does not currently include a native DuckDB Toolbox source despite the manual's broader wording
 
 What is missing:
@@ -123,8 +123,8 @@ Current reality:
 
 Relevant files:
 
-- [mcp/tools.yaml](/Users/gersumasfaw/week8_9/mcp/tools.yaml)
-- [src/dab/remote_dab_adapter.py](/Users/gersumasfaw/week8_9/src/dab/remote_dab_adapter.py)
+- [mcp/tools.yaml](/shared/DataAgentBench/oracle_forge_v3/mcp/tools.yaml)
+- [src/dab/remote_dab_adapter.py](/shared/DataAgentBench/oracle_forge_v3/src/dab/remote_dab_adapter.py)
 
 ### Consistent multi-database access model
 
@@ -181,9 +181,9 @@ What is not there yet:
 
 Repo evidence:
 
-- [src/eval/harness.py](/Users/gersumasfaw/week8_9/src/eval/harness.py)
-- [src/eval/score_tracker.py](/Users/gersumasfaw/week8_9/src/eval/score_tracker.py)
-- [tests/test_architecture.py](/Users/gersumasfaw/week8_9/tests/test_architecture.py)
+- [src/eval/harness.py](/shared/DataAgentBench/oracle_forge_v3/src/eval/harness.py)
+- [src/eval/score_tracker.py](/shared/DataAgentBench/oracle_forge_v3/src/eval/score_tracker.py)
+- [tests/test_architecture.py](/shared/DataAgentBench/oracle_forge_v3/tests/test_architecture.py)
 
 ## Not Yet Aligned
 

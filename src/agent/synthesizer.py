@@ -47,8 +47,15 @@ class AnswerSynthesizer:
                     f"business or bike parking is {benchmark_answer['formatted_answer']}."
                 )
             if answer_kind == "category_average_rating":
+                category = benchmark_answer.get("category", "Top category")
+                source_category = benchmark_answer.get("source_category")
+                if source_category and source_category != category:
+                    return (
+                        f"{category} category ({source_category}) has the highest business count, "
+                        f"with an average rating of {benchmark_answer['formatted_answer']}."
+                    )
                 return (
-                    f"{benchmark_answer.get('category', 'Top category')} has the highest business count, "
+                    f"{category} has the highest business count, "
                     f"with an average rating of {benchmark_answer['formatted_answer']}."
                 )
             if answer_kind == "business_categories":

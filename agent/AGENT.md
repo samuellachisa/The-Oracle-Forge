@@ -38,6 +38,6 @@ Oracle Forge is an orchestrated data-agent runtime for DataAgentBench. It combin
 ## Evidence Pointers
 
 - Smoke test: `python run_benchmark_query.py --dataset yelp --query-id 1 --validate-answer`
-- KB: [kb/README.md](/Users/gersumasfaw/week8_9/kb/README.md)
-- Planning: [planning/README.md](/Users/gersumasfaw/week8_9/planning/README.md)
-- Alignment: [MANUAL_ALIGNMENT.md](/Users/gersumasfaw/week8_9/MANUAL_ALIGNMENT.md)
+- KB: [kb/README.md](/shared/DataAgentBench/oracle_forge_v3/kb/README.md)
+- Planning: [planning/README.md](/shared/DataAgentBench/oracle_forge_v3/planning/README.md)
+- Alignment: [MANUAL_ALIGNMENT.md](/shared/DataAgentBench/oracle_forge_v3/MANUAL_ALIGNMENT.md)

@@ -67,3 +67,25 @@ Notes:
 - q2 remains the only blocking query (`benchmark_answer=3.76`, expected near `3.699395770392749`).
 - q3 (`timestamp: 20260413_072739`): `is_valid: true`.
 - q6 (`timestamp: 20260413_072745`): `is_valid: true`.
+
+## 2026-04-13
+Run type: Final Yelp smoke pass after q7 fix
+Command:
+- `python run_benchmark_query.py --dataset yelp --query-id 1 --validate-answer`
+- `python run_benchmark_query.py --dataset yelp --query-id 2 --validate-answer`
+- `python run_benchmark_query.py --dataset yelp --query-id 3 --validate-answer`
+- `python run_benchmark_query.py --dataset yelp --query-id 4 --validate-answer`
+- `python run_benchmark_query.py --dataset yelp --query-id 5 --validate-answer`
+- `python run_benchmark_query.py --dataset yelp --query-id 6 --validate-answer`
+- `python run_benchmark_query.py --dataset yelp --query-id 7 --validate-answer`
+Dataset scope: `yelp` queries 1 through 7
+Trials: 1 per query
+Score: `7/7` pass (`is_valid: true` for all seven queries)
+Notes:
+- q1: `3.55` average rating in Indianapolis validated successfully.
+- q2: `PA, 3.70` validated successfully after the state-average fix.
+- q3: `35` validated successfully after the 2018 parking count fix.
+- q4: `Restaurant, 3.63` validated successfully.
+- q5: `PA, 3.48` validated successfully.
+- q6: `Coffee House Too Cafe` with `Restaurants, Breakfast & Brunch, American (New), Cafes` validated successfully.
+- q7: `Restaurants, Food, American (New), Shopping, Breakfast & Brunch` validated successfully after the q7 parser fallback and shared-server sync.

@@ -1,0 +1,71 @@
+# Local Yelp Toolbox test configuration.
+# This mirrors the remote-machine local DB setup and is intended for
+# direct testing against local Postgres, MongoDB, and DuckDB endpoints.
+
+kind: sources
+name: yelp-postgres
+type: postgres
+host: ${PG_HOST:127.0.0.1}
+port: ${PG_PORT:5432}
+database: ${PG_DB:bookreview_db}
+user: ${PG_USER:postgres}
+password: ${PG_PASSWORD:gpt-5}
+---
+kind: sources
+name: yelp-mongodb
+type: mongodb
+uri: ${MONGO_URI:mongodb://localhost:27017/artifacts_db}
+---
+kind: sources
+name: yelp-duckdb
+type: duckdb
+database: ${DUCKDB_PATH:/shared/DataAgentBench/query_yelp/query_dataset/yelp_user.db}
+---
+kind: tools
+name: postgres-list-tables
+type: postgres-list-tables
+source: yelp-postgres
+description: List tables in the local Yelp PostgreSQL database.
+---
+kind: tools
+name: postgres-execute
+type: postgres-execute-sql
+source: yelp-postgres
+description: Execute SQL against the local Yelp PostgreSQL database.
+---
+kind: tools
+name: mongodb-find-businesses
+type: mongodb-find
+source: yelp-mongodb
+description: Query Yelp business metadata from the local MongoDB database.
+database: ${YELP_MONGO_DB:artifacts_db}
+collection: business
+filterPayload: |
+  {}
+limit: 10
+---
+kind: tools
+name: mongodb-find-checkins
+type: mongodb-find
+source: yelp-mongodb
+description: Query Yelp checkin metadata from the local MongoDB database.
+database: ${YELP_MONGO_DB:artifacts_db}
+collection: checkin
+filterPayload: |
+  {}
+limit: 10
+---
+kind: tools
+name: duckdb-execute
+type: duckdb-execute-sql
+source: yelp-duckdb
+description: Execute SQL against the local Yelp DuckDB database.
+---
+kind: toolsets
+name: local-yelp
+tools:
+  - postgres-list-tables
+  - postgres-execute
+  - mongodb-find-businesses
+  - mongodb-find-checkins
+  - duckdb-execute

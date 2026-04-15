@@ -11,9 +11,9 @@ Signal Corps should publish only what is technically true and grounded in:
 
 Suggested contents:
 
-- [engagement_log.md](/Users/gersumasfaw/week8_9/signal/engagement_log.md)
-- [community_log.md](/Users/gersumasfaw/week8_9/signal/community_log.md)
-- [articles](/Users/gersumasfaw/week8_9/signal/articles)
+- [engagement_log.md](/shared/DataAgentBench/oracle_forge_v3/signal/engagement_log.md)
+- [community_log.md](/shared/DataAgentBench/oracle_forge_v3/signal/community_log.md)
+- [articles](/shared/DataAgentBench/oracle_forge_v3/signal/articles)
 
 Simple rule:
 

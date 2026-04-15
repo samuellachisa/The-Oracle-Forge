@@ -16,8 +16,8 @@ Production-style data-agent workspace for the Oracle Forge challenge.
 
 ## Architecture Diagram
 
-- Diagram source docs: [ARCHITECTURE.md](/Users/gersumasfaw/week8_9/ARCHITECTURE.md), [ARCHITECTURE_V2.md](/Users/gersumasfaw/week8_9/ARCHITECTURE_V2.md), [ARCHITECTURE_V3.md](/Users/gersumasfaw/week8_9/ARCHITECTURE_V3.md)
-- Diagram image artifact: [oracle_forge_architecture_v2.png](/Users/gersumasfaw/week8_9/oracle_forge_architecture_v2.png)
+- Diagram source docs: [ARCHITECTURE.md](/shared/DataAgentBench/oracle_forge_v3/ARCHITECTURE.md), [ARCHITECTURE_V2.md](/shared/DataAgentBench/oracle_forge_v3/ARCHITECTURE_V2.md), [ARCHITECTURE_V3.md](/shared/DataAgentBench/oracle_forge_v3/ARCHITECTURE_V3.md)
+- Diagram image artifact: [oracle_forge_architecture_v2.png](/shared/DataAgentBench/oracle_forge_v3/oracle_forge_architecture_v2.png)
 
 ## Fresh Machine Setup
 
@@ -183,7 +183,7 @@ If `tickets` is not the real table name, replace it with the name returned by `l
 
 ## Toolbox Checks
 
-The shared Toolbox config is in [mcp/tools.yaml](/Users/gersumasfaw/week8_9/mcp/tools.yaml).
+The shared Toolbox config is in [mcp/tools.yaml](/shared/DataAgentBench/oracle_forge_v3/mcp/tools.yaml).
 
 In this repo, `mcp/tools.yaml` currently defines native Toolbox connections for:
 
@@ -248,8 +248,8 @@ Interpretation:
 
 ## Related Docs
 
-- [TEAM_JOIN.md](/Users/gersumasfaw/week8_9/TEAM_JOIN.md)
-- [ARCHITECTURE.md](/Users/gersumasfaw/week8_9/ARCHITECTURE.md)
-- [ARCHITECTURE_V2.md](/Users/gersumasfaw/week8_9/ARCHITECTURE_V2.md)
-- [ARCHITECTURE_V3.md](/Users/gersumasfaw/week8_9/ARCHITECTURE_V3.md)
-- [ORACLE_FORGE_WIN_PLAN.md](/Users/gersumasfaw/week8_9/ORACLE_FORGE_WIN_PLAN.md)
+- [TEAM_JOIN.md](/shared/DataAgentBench/oracle_forge_v3/TEAM_JOIN.md)
+- [ARCHITECTURE.md](/shared/DataAgentBench/oracle_forge_v3/ARCHITECTURE.md)
+- [ARCHITECTURE_V2.md](/shared/DataAgentBench/oracle_forge_v3/ARCHITECTURE_V2.md)
+- [ARCHITECTURE_V3.md](/shared/DataAgentBench/oracle_forge_v3/ARCHITECTURE_V3.md)
+- [ORACLE_FORGE_WIN_PLAN.md](/shared/DataAgentBench/oracle_forge_v3/ORACLE_FORGE_WIN_PLAN.md)

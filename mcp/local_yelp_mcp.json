@@ -1,0 +1,30 @@
+{
+  "servers": {
+    "postgres": {
+      "command": "uvx",
+      "args": ["mcp-server-postgresql"],
+      "env": {
+        "PG_HOST": "127.0.0.1",
+        "PG_PORT": "5432",
+        "PG_USER": "postgres",
+        "PG_PASSWORD": "gpt-5",
+        "PG_DATABASE": "bookreview_db"
+      },
+      "type": "stdio"
+    },
+    "duckdb": {
+      "command": "uvx",
+      "args": ["mcp-server-duckdb", "--db-path", "/shared/DataAgentBench/query_yelp/query_dataset/yelp_user.db"],
+      "type": "stdio"
+    },
+    "mongodb": {
+      "command": "npx",
+      "args": ["-y", "mongodb-mcp-server@latest"],
+      "env": {
+        "MDB_MCP_CONNECTION_STRING": "mongodb://localhost:27017/yelp_db"
+      },
+      "type": "stdio"
+    }
+  },
+  "inputs": []
+}

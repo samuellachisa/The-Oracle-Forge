@@ -3,7 +3,7 @@
   "transport": "stdio",
   "command": "python3",
   "args": [
-    "/Users/gersumasfaw/week8_9/scripts/run_remote_sandbox_mcp.py"
+    "/shared/DataAgentBench/oracle_forge_v3/scripts/run_remote_sandbox_mcp.py"
   ],
   "env": {
     "REMOTE_SANDBOX_ENABLED": "true",

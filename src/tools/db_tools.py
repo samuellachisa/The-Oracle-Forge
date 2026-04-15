@@ -16,6 +16,11 @@ try:
 except Exception:  # pragma: no cover - optional dependency
     psycopg = None
 
+try:
+    import duckdb  # type: ignore
+except Exception:  # pragma: no cover - optional dependency
+    duckdb = None
+
 
 MOCK_SQL_DATA = {
     "postgres": {
@@ -145,6 +150,27 @@ def run_sql_sqlite(db_path: str, query: str) -> dict[str, Any]:
 
 
 def run_sql_duckdb(query: str) -> dict[str, Any]:
+    duckdb_path = os.getenv("DUCKDB_PATH", "")
+    if duckdb_path and duckdb is not None:
+        try:
+            conn = duckdb.connect(duckdb_path, read_only=True)
+            try:
+                result = conn.execute(query)
+                rows = result.fetchall()
+                columns = [desc[0] for desc in result.description] if result.description else []
+                rows_as_dicts = [dict(zip(columns, row)) for row in rows] if columns else []
+                return {
+                    "ok": True,
+                    "source": "duckdb",
+                    "query": query,
+                    "columns": columns,
+                    "rows": rows_as_dicts,
+                    "row_count": len(rows_as_dicts),
+                }
+            finally:
+                conn.close()
+        except Exception as exc:
+            return {"ok": False, "source": "duckdb", "error": str(exc), "query": query, "duckdb_path": duckdb_path}
     return _run_mock_sql("duckdb", query)
 
 

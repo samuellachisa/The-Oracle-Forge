@@ -3,7 +3,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 
-OUT = Path("/Users/gersumasfaw/week8_9/oracle_forge_architecture_v2.png")
+OUT = Path("/shared/DataAgentBench/oracle_forge_v3/oracle_forge_architecture_v2.png")
 
 W = 1800
 H = 2300
