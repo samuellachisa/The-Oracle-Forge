@@ -30,6 +30,13 @@ Action taken: Link shared with Intelligence Officers. Added to Week 9 architectu
 
 ---
 
+## 2026-04-15
+Source: Hugging Face Discord — #general channel
+Link: https://discord.com/channels/879548962464493619/879548962464493622/1495113031263453304
+What was shared: Post explaining Oracle Forge benchmark results and the three KB layers that moved Yelp from 0/7 to 7/7. Highlighted join key mismatch as the dominant silent failure mode. Asked community about their own multi-database agent failure patterns.
+Why it matters: First Signal Corps Discord engagement. Opens a channel for practitioner intelligence from the HuggingFace ML community.
+Action taken: Monitoring for replies. Any technical responses to be fed back to Intelligence Officers.
+
 ## Substantive Community Comments Posted by Team
 
 
