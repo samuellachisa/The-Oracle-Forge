@@ -61,3 +61,15 @@ Last verified: 2026-04-14
   - q5: `PA, 3.48`
   - q6: `Coffee House Too Cafe, Restaurants, Breakfast & Brunch, American (New), Cafes`
   - q7: `Restaurants, Food, American (New), Shopping, Breakfast & Brunch`
+
+## [2026-04-18]
+
+- Added the CRM q8-q13 live verification outcomes to the corrections log so the self-learning loop reflects the latest benchmark closures.
+- CRM resolved behaviors now include:
+  - q8: owner-transfer count handling for the fewest-transfer agent selection
+  - q9: state-level closure-time aggregation
+  - q10: handle-time averaging over multi-case agents
+  - q11: previous-month product selection from order history
+  - q12: opportunity turnaround timing in April 2023
+  - q13: five-month order-revenue aggregation by agent
+- Verified that the live remote-local CRM path now passes q1 through q13 while the KB remains hint-only and the router stays dispatch-focused.

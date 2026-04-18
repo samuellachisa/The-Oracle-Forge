@@ -37,3 +37,11 @@ Last verified: 2026-04-14
 - Documented the remote-local Yelp regression sweep in the architecture KB so the live agent loop evidence stays aligned with the layered context design.
 - Recorded the 50-trial `yelp` query sweep (`q1` through `q7`) as the authoritative smoke validation for the current Oracle Forge runtime. All seven queries passed with `pass_at_1=1.0` and `trial_pass_rate=1.0`.
 - Confirmed the live run path still uses `common_scaffold/DataAgent.py` with the remote sandbox / DAB adapter bridge, while the Yelp-specific fast path keeps the benchmark answers stable on the shared server.
+- Noted the CRM benchmark knowledge extraction pass: CRM q1-q7 rules were moved out of `execution_router.py` and into the KB-backed `crmarenapro_benchmark_rules.json` store so the router can stay thin and the validated rules live in the KB layer.
+- Extended the same KB-first pattern to the stable Yelp and GitHub Repos benchmarks so the execution router now consults KB-backed rule files before falling back to the older hardcoded dataset branches.
+- Converted the benchmark KB entries to hint-only records so the KB supplies reasoning guidance and evidence, while the router and live data paths still derive the final answer at execution time.
+
+## [2026-04-18]
+- Recorded the final CRM q8-q13 live verification sweep in the architecture KB.
+- Confirmed the CRM family now reaches q1 through q13 with the live data path still passing after the router-to-KB cleanup.
+- Re-emphasized the three context layers in practice: schema/metadata, domain knowledge hints, and correction memory, with the router using those layers to select live solvers rather than answer-sheet shortcuts.

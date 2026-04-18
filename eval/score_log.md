@@ -204,3 +204,47 @@ Iterations: not recorded
 Trials: 50
 Score: interrupted
 Notes: Detached tmux run launched on the team host, but SSH connectivity dropped before a result JSON was written. No benchmark artifact was produced for this rerun.
+
+## 2026-04-18
+Run type: CRM live verification sweep
+Command:
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 8 --validate-answer`
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 9 --validate-answer`
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 10 --validate-answer`
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 11 --validate-answer`
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 12 --validate-answer`
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 13 --validate-answer`
+Dataset scope: `crmarenapro` queries 8 through 13
+Iterations: not recorded
+Trials: 1 per query
+Score: `6/6` pass (`is_valid: true` for all six queries)
+Notes:
+- q8: `005Wt000003NIliIAG`
+- q9: `MI`
+- q10: `005Wt000003NDqDIAW`
+- q11: `01tWt000006hV8LIAU`
+- q12: `005Wt000003NDEBIA4`
+- q13: `005Wt000003NIXCIA4`
+
+## 2026-04-18
+Run type: CRM live verification sweep
+Command:
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 1 --validate-answer`
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 2 --validate-answer`
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 3 --validate-answer`
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 4 --validate-answer`
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 5 --validate-answer`
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 6 --validate-answer`
+- `REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 7 --validate-answer`
+Dataset scope: `crmarenapro` queries 1 through 7
+Iterations: not recorded
+Trials: 1 per query
+Score: `7/7` pass (`is_valid: true` for all seven queries)
+Notes:
+- q1: `Authority`
+- q2: `ka0Wt000000Eq0MIAS`
+- q3: `Negotiation`
+- q4: `November`
+- q5: `a03Wt00000JqnHwIAJ`
+- q6: `ka0Wt000000EnwvIAC`
+- q7: `ka0Wt000000EoD3IAK`

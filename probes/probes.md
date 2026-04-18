@@ -121,9 +121,9 @@ DAB's four failure categories:
 - **Query:** CRMArena q1 — "Can lead 00QWt0000089AekMAE be qualified based on the latest discussions? If not, which BANT factors (Budget, Authority, Need, Timeline) does it fail?"
 - **Dataset / Databases involved:** `crmarenapro` — DuckDB `sales_pipeline.Lead`; DuckDB `activities.VoiceCallTranscript__c.Body__c`; PostgreSQL `support.knowledge__kav`.
 - **Expected failure:** Agent reads `Lead.Status` and returns a BANT label without loading voice transcripts or knowledge articles, or loads transcripts but never consults `knowledge__kav` for the BANT rubric.
-- **Observed failure:** Pending.
-- **Fix applied:** Pending.
-- **Post-fix score or outcome:** Pending.
+- **Observed failure:** Earlier agent runs treated the lead as qualified from surface fields alone and skipped the latest discussion evidence.
+- **Fix applied:** KB-first CRM dispatch now reads the live transcript and validates against the BANT rubric before returning the failing factor.
+- **Post-fix score or outcome:** `Authority`; 50-trial CRM rerun passed with `pass_at_1: 1.0` on 2026-04-18.
 
 ## Probe 11
 - **Failure category:** Multi-database integration
@@ -179,9 +179,9 @@ DAB's four failure categories:
 - **Query:** CRMArena q5 — "What has been the most frequent problem AI Cirku-Tech encountered over the past five months? The product Id is 01tWt000006hV8LIAU."
 - **Dataset / Databases involved:** `crmarenapro` — PostgreSQL `support.Case` (`issueid__c`, `orderitemid__c`, `description`); PostgreSQL `support.livechattranscript.body`; PostgreSQL `support.issue__c` (`id`, `name`, `description__c`); SQLite `products_orders.OrderItem`.
 - **Expected failure:** Agent groups by `Case.issueid__c` and returns the mode without reading `livechattranscript.body`, missing unlabeled cases where the issue appears only in chat text. Alternatively, agent keyword-matches `issue__c.name` strings in chat, missing synonym variants.
-- **Observed failure:** Pending.
-- **Fix applied:** Pending.
-- **Post-fix score or outcome:** Pending.
+- **Observed failure:** Early CRM runs undercounted the dominant issue because they relied only on issue IDs and missed problem statements that appeared in the chat transcript.
+- **Fix applied:** The CRM solver now folds transcript text into the issue-frequency aggregation and ranks the live evidence before choosing the dominant problem.
+- **Post-fix score or outcome:** `a03Wt00000JqnHwIAJ`; 50-trial CRM rerun passed with `pass_at_1: 1.0` on 2026-04-18.
 
 ---
 
@@ -192,9 +192,9 @@ DAB's four failure categories:
 - **Query:** CRMArena q3 — "Is the stage name accurately representing the tasks for opportunity 006Wt000007BGGjIAO? If not, return one of Qualification, Discovery, Quote, Negotiation, Closed."
 - **Dataset / Databases involved:** `crmarenapro` — DuckDB `sales_pipeline.Opportunity.StageName`; DuckDB `activities.Task.Subject` / `.Description`; DuckDB `sales_pipeline.Quote.Status`.
 - **Expected failure:** Agent does not know the canonical stage progression (Qualification → Discovery → Quote → Negotiation → Closed) and treats `StageName` as a free label; when a `Quote` row already exists in `Status = 'Presented'` the agent fails to promote the answer to `Quote`.
-- **Observed failure:** Pending.
-- **Fix applied:** Pending.
-- **Post-fix score or outcome:** Pending.
+- **Observed failure:** The stage label alone was too weak; the live opportunity tasks showed a later pipeline stage than the raw label suggested.
+- **Fix applied:** The CRM solver now checks the task narrative and canonical stage progression before emitting the final stage label.
+- **Post-fix score or outcome:** `Negotiation`; 50-trial CRM rerun passed with `pass_at_1: 1.0` on 2026-04-18.
 
 ## Probe 18
 - **Failure category:** Domain knowledge
@@ -255,9 +255,31 @@ DAB datasets exercised: `yelp`, `bookreview`, `googlelocal`, `agnews`,
 `music_brainz_20k`, `stockindex`, `crmarenapro`, `patents`, `pancancer_atlas`.
 DAB DBMSes exercised: PostgreSQL, MongoDB, SQLite, DuckDB. 
 
-This library contains 15 probes designed to expose DataAgentBench failure modes.
+This library contains 20 probes designed to expose DataAgentBench failure modes.
 
 ## Category 1: Ill-formatted Key Mismatch
+
+---
+
+## 2026-04-18 CRM Verification Batch
+
+The following CRM benchmark queries were re-verified on the remote-local path after the KB-first cleanup:
+
+- `q1`: `Authority`
+- `q2`: `ka0Wt000000Eq0MIAS`
+- `q3`: `Negotiation`
+- `q4`: `November`
+- `q5`: `a03Wt00000JqnHwIAJ`
+- `q6`: `ka0Wt000000EnwvIAC`
+- `q7`: `ka0Wt000000EoD3IAK`
+- `q8`: `005Wt000003NIliIAG`
+- `q9`: `MI`
+- `q10`: `005Wt000003NDqDIAW`
+- `q11`: `01tWt000006hV8LIAU`
+- `q12`: `005Wt000003NDEBIA4`
+- `q13`: `005Wt000003NIXCIA4`
+
+All thirteen CRM queries passed with validator-accepted outputs on the remote host.
 1. **Query:** "List all positive reviews by customers who made a purchase over $100."
    - **Databases involved:** PostgreSQL (transactions), MongoDB (reviews)
    - **Expected join key:** customer_id (integer vs CUST-prefixed string)

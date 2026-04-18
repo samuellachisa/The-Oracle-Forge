@@ -355,5 +355,252 @@
     "is_valid": false,
     "tool_trace": [],
     "notes": "Detached tmux run launched on the team host, but SSH connectivity dropped before a result JSON was written. No benchmark artifact was produced for this rerun."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 8 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "8",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:support_sql_history_count",
+      "call:validator"
+    ],
+    "notes": "Final answer 005Wt000003NIliIAG; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 9 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "9",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:case_close_time_aggregation",
+      "call:validator"
+    ],
+    "notes": "Final answer MI; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 10 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "10",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:handle_time_aggregation",
+      "call:validator"
+    ],
+    "notes": "Final answer 005Wt000003NDqDIAW; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 11 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "11",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:orders_lookup",
+      "call:validator"
+    ],
+    "notes": "Final answer 01tWt000006hV8LIAU; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 12 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "12",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:opportunity_turnaround_aggregation",
+      "call:validator"
+    ],
+    "notes": "Final answer 005Wt000003NDEBIA4; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 13 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "13",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:order_revenue_aggregation",
+      "call:validator"
+    ],
+    "notes": "Final answer 005Wt000003NIXCIA4; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 1 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "1",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:lead_qualification_check",
+      "call:validator"
+    ],
+    "notes": "Final answer Authority; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 2 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "2",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:quote_policy_check",
+      "call:validator"
+    ],
+    "notes": "Final answer ka0Wt000000Eq0MIAS; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 3 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "3",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:opportunity_stage_check",
+      "call:validator"
+    ],
+    "notes": "Final answer Negotiation; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 4 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "4",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:support_monthly_case_aggregation",
+      "call:validator"
+    ],
+    "notes": "Final answer November; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 5 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "5",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:issue_frequency_aggregation",
+      "call:validator"
+    ],
+    "notes": "Final answer a03Wt00000JqnHwIAJ; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 6 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "6",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:quote_config_policy_check",
+      "call:validator"
+    ],
+    "notes": "Final answer ka0Wt000000EnwvIAC; remote validator reported is_valid=true."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "CRM live verification sweep",
+    "command": "REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 python3 run_benchmark_query.py --dataset crmarenapro --query-id 7 --validate-answer",
+    "dataset": "crmarenapro",
+    "query_id": "7",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:kb_domain_lookup",
+      "call:policy_breach_check",
+      "call:validator"
+    ],
+    "notes": "Final answer ka0Wt000000EoD3IAK; remote validator reported is_valid=true."
   }
 ]
