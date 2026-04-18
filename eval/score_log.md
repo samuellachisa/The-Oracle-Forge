@@ -127,3 +127,93 @@ Iterations: `20`
 Trials: 1
 Score: pass
 Notes: Final answer `3.55`; matched the benchmark-accepted Indianapolis average. This was a single-query agent smoke run, not a full DAB validator invocation.
+
+## 2026-04-18
+Run type: Yelp 50-trial benchmark sweep
+Command: `ssh gersum@100.101.234.123 "cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q1_trials50.json --datasets yelp --query-ids 1 --remote-host localhost --remote-dab-path /shared/DataAgentBench"`
+Dataset scope: `yelp` query 1
+Iterations: not recorded
+Trials: 50
+Score: pass (`pass_at_1=1.0`, `trial_pass_rate=1.0`)
+Notes: Final answer `3.55`; remote scorer reported `passed_queries=1` and `passed_trials=50`.
+
+## 2026-04-18
+Run type: Yelp 50-trial benchmark sweep
+Command: `ssh gersum@100.101.234.123 "cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q2_trials50.json --datasets yelp --query-ids 2 --remote-host localhost --remote-dab-path /shared/DataAgentBench"`
+Dataset scope: `yelp` query 2
+Iterations: not recorded
+Trials: 50
+Score: pass (`pass_at_1=1.0`, `trial_pass_rate=1.0`)
+Notes: Final answer `PA, 3.70`; remote scorer reported `passed_queries=1` and `passed_trials=50`.
+
+## 2026-04-18
+Run type: Yelp 50-trial benchmark sweep
+Command: `ssh gersum@100.101.234.123 "cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q3_trials50.json --datasets yelp --query-ids 3 --remote-host localhost --remote-dab-path /shared/DataAgentBench"`
+Dataset scope: `yelp` query 3
+Iterations: not recorded
+Trials: 50
+Score: pass (`pass_at_1=1.0`, `trial_pass_rate=1.0`)
+Notes: Final answer `35`; remote scorer reported `passed_queries=1` and `passed_trials=50`.
+
+## 2026-04-18
+Run type: Yelp 50-trial benchmark sweep
+Command: `ssh gersum@100.101.234.123 "cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q4_trials50.json --datasets yelp --query-ids 4 --remote-host localhost --remote-dab-path /shared/DataAgentBench"`
+Dataset scope: `yelp` query 4
+Iterations: not recorded
+Trials: 50
+Score: pass (`pass_at_1=1.0`, `trial_pass_rate=1.0`)
+Notes: Final answer `Restaurant, 3.63`; remote scorer reported `passed_queries=1` and `passed_trials=50`.
+
+## 2026-04-18
+Run type: Yelp 50-trial benchmark sweep
+Command: `ssh gersum@100.101.234.123 "cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q5_trials50.json --datasets yelp --query-ids 5 --remote-host localhost --remote-dab-path /shared/DataAgentBench"`
+Dataset scope: `yelp` query 5
+Iterations: not recorded
+Trials: 50
+Score: pass (`pass_at_1=1.0`, `trial_pass_rate=1.0`)
+Notes: Final answer `PA, 3.48`; remote scorer reported `passed_queries=1` and `passed_trials=50`.
+
+## 2026-04-18
+Run type: Yelp 50-trial benchmark sweep
+Command: `ssh gersum@100.101.234.123 "cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q6_trials50.json --datasets yelp --query-ids 6 --remote-host localhost --remote-dab-path /shared/DataAgentBench"`
+Dataset scope: `yelp` query 6
+Iterations: not recorded
+Trials: 50
+Score: pass (`pass_at_1=1.0`, `trial_pass_rate=1.0`)
+Notes: Final answer `Coffee House Too Cafe, Restaurants, Breakfast & Brunch, American (New), Cafes`; remote scorer reported `passed_queries=1` and `passed_trials=50`.
+
+## 2026-04-18
+Run type: Yelp 50-trial benchmark sweep
+Command: `ssh gersum@100.101.234.123 "cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q7_trials50.json --datasets yelp --query-ids 7 --remote-host localhost --remote-dab-path /shared/DataAgentBench"`
+Dataset scope: `yelp` query 7
+Iterations: not recorded
+Trials: 50
+Score: pass (`pass_at_1=1.0`, `trial_pass_rate=1.0`)
+Notes: Final answer `Restaurants, Food, American (New), Shopping, Breakfast & Brunch`; remote scorer reported `passed_queries=1` and `passed_trials=50`.
+
+## 2026-04-18
+Run type: GitHub Repos single-trial benchmark smoke
+Command: `ssh gersum@100.101.234.123 "cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && REMOTE_SANDBOX_ENABLED=true REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 timeout 240 python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 1 --output results/gpt5_github_repos_q3_trial1.json --datasets GITHUB_REPOS --query-ids 3 --remote-host localhost --remote-dab-path /shared/DataAgentBench"`
+Dataset scope: `GITHUB_REPOS` query 3
+Iterations: not recorded
+Trials: 1
+Score: pass (`pass_at_1=1.0`, `trial_pass_rate=1.0`)
+Notes: Final answer `1077`; remote scorer reported `passed_queries=1` and `passed_trials=1`.
+
+## 2026-04-18
+Run type: GitHub Repos single-trial benchmark smoke
+Command: `ssh gersum@100.101.234.123 "cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && REMOTE_SANDBOX_ENABLED=true REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 timeout 240 python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 1 --output results/gpt5_github_repos_q4_trial1.json --datasets GITHUB_REPOS --query-ids 4 --remote-host localhost --remote-dab-path /shared/DataAgentBench"`
+Dataset scope: `GITHUB_REPOS` query 4
+Iterations: not recorded
+Trials: 1
+Score: pass (`pass_at_1=1.0`, `trial_pass_rate=1.0`)
+Notes: Final answer `Top five repositories by commit count among non-Python main-language GitHub repos are: apple/swift, twbs/bootstrap, Microsoft/vscode, facebook/react, tensorflow/tensorflow.`; remote scorer reported `passed_queries=1` and `passed_trials=1`.
+
+## 2026-04-18
+Run type: GitHub Repos 50-trial rerun interrupted
+Command: `ssh gersum@100.101.234.123 "cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && REMOTE_SANDBOX_ENABLED=true REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 timeout 7200 python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_github_repos_q2_q4_trials50.json --datasets GITHUB_REPOS --query-ids 2,3,4 --remote-host localhost --remote-dab-path /shared/DataAgentBench"`
+Dataset scope: `GITHUB_REPOS` queries 2, 3, and 4
+Iterations: not recorded
+Trials: 50
+Score: interrupted
+Notes: Detached tmux run launched on the team host, but SSH connectivity dropped before a result JSON was written. No benchmark artifact was produced for this rerun.

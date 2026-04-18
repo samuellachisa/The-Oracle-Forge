@@ -169,5 +169,191 @@
       "call:mongodb_find_businesses"
     ],
     "notes": "Final answer 3.55; matched the benchmark-accepted Indianapolis average. This was a single-query agent smoke run rather than a separate DAB validator invocation."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "Yelp 50-trial benchmark sweep",
+    "command": "ssh gersum@100.101.234.123 \"cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q1_trials50.json --datasets yelp --query-ids 1 --remote-host localhost --remote-dab-path /shared/DataAgentBench\"",
+    "dataset": "yelp",
+    "query_id": "1",
+    "iterations": null,
+    "trials": 50,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:remote_sandbox_local_exec",
+      "call:duckdb_execute_query",
+      "call:mongodb_find_businesses"
+    ],
+    "notes": "Final answer 3.55; remote scorer reported passed_queries=1 and passed_trials=50."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "Yelp 50-trial benchmark sweep",
+    "command": "ssh gersum@100.101.234.123 \"cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q2_trials50.json --datasets yelp --query-ids 2 --remote-host localhost --remote-dab-path /shared/DataAgentBench\"",
+    "dataset": "yelp",
+    "query_id": "2",
+    "iterations": null,
+    "trials": 50,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:remote_sandbox_local_exec",
+      "call:duckdb_execute_query",
+      "call:mongodb_find_businesses"
+    ],
+    "notes": "Final answer PA, 3.70; remote scorer reported passed_queries=1 and passed_trials=50."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "Yelp 50-trial benchmark sweep",
+    "command": "ssh gersum@100.101.234.123 \"cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q3_trials50.json --datasets yelp --query-ids 3 --remote-host localhost --remote-dab-path /shared/DataAgentBench\"",
+    "dataset": "yelp",
+    "query_id": "3",
+    "iterations": null,
+    "trials": 50,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:remote_sandbox_local_exec",
+      "call:duckdb_execute_query",
+      "call:mongodb_find_businesses"
+    ],
+    "notes": "Final answer 35; remote scorer reported passed_queries=1 and passed_trials=50."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "Yelp 50-trial benchmark sweep",
+    "command": "ssh gersum@100.101.234.123 \"cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q4_trials50.json --datasets yelp --query-ids 4 --remote-host localhost --remote-dab-path /shared/DataAgentBench\"",
+    "dataset": "yelp",
+    "query_id": "4",
+    "iterations": null,
+    "trials": 50,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:remote_sandbox_local_exec",
+      "call:duckdb_execute_query",
+      "call:mongodb_find_businesses"
+    ],
+    "notes": "Final answer Restaurant, 3.63; remote scorer reported passed_queries=1 and passed_trials=50."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "Yelp 50-trial benchmark sweep",
+    "command": "ssh gersum@100.101.234.123 \"cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q5_trials50.json --datasets yelp --query-ids 5 --remote-host localhost --remote-dab-path /shared/DataAgentBench\"",
+    "dataset": "yelp",
+    "query_id": "5",
+    "iterations": null,
+    "trials": 50,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:remote_sandbox_local_exec",
+      "call:duckdb_execute_query",
+      "call:mongodb_find_businesses"
+    ],
+    "notes": "Final answer PA, 3.48; remote scorer reported passed_queries=1 and passed_trials=50."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "Yelp 50-trial benchmark sweep",
+    "command": "ssh gersum@100.101.234.123 \"cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q6_trials50.json --datasets yelp --query-ids 6 --remote-host localhost --remote-dab-path /shared/DataAgentBench\"",
+    "dataset": "yelp",
+    "query_id": "6",
+    "iterations": null,
+    "trials": 50,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:remote_sandbox_local_exec",
+      "call:duckdb_execute_query",
+      "call:mongodb_find_businesses"
+    ],
+    "notes": "Final answer Coffee House Too Cafe, Restaurants, Breakfast & Brunch, American (New), Cafes; remote scorer reported passed_queries=1 and passed_trials=50."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "Yelp 50-trial benchmark sweep",
+    "command": "ssh gersum@100.101.234.123 \"cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_yelp_q7_trials50.json --datasets yelp --query-ids 7 --remote-host localhost --remote-dab-path /shared/DataAgentBench\"",
+    "dataset": "yelp",
+    "query_id": "7",
+    "iterations": null,
+    "trials": 50,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:remote_sandbox_local_exec",
+      "call:duckdb_execute_query",
+      "call:mongodb_find_businesses"
+    ],
+    "notes": "Final answer Restaurants, Food, American (New), Shopping, Breakfast & Brunch; remote scorer reported passed_queries=1 and passed_trials=50."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "GitHub Repos single-trial benchmark smoke",
+    "command": "ssh gersum@100.101.234.123 \"cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && REMOTE_SANDBOX_ENABLED=true REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 timeout 240 python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 1 --output results/gpt5_github_repos_q3_trial1.json --datasets GITHUB_REPOS --query-ids 3 --remote-host localhost --remote-dab-path /shared/DataAgentBench\"",
+    "dataset": "GITHUB_REPOS",
+    "query_id": "3",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:remote_dab_list_db",
+      "call:direct_db_count",
+      "call:validator"
+    ],
+    "notes": "Final answer 1077; remote scorer reported passed_queries=1 and passed_trials=1."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "GitHub Repos single-trial benchmark smoke",
+    "command": "ssh gersum@100.101.234.123 \"cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && REMOTE_SANDBOX_ENABLED=true REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 timeout 240 python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 1 --output results/gpt5_github_repos_q4_trial1.json --datasets GITHUB_REPOS --query-ids 4 --remote-host localhost --remote-dab-path /shared/DataAgentBench\"",
+    "dataset": "GITHUB_REPOS",
+    "query_id": "4",
+    "iterations": null,
+    "trials": 1,
+    "score": "pass",
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "is_valid": true,
+    "tool_trace": [
+      "call:remote_dab_list_db",
+      "call:direct_db_count",
+      "call:validator"
+    ],
+    "notes": "Final answer Top five repositories by commit count among non-Python main-language GitHub repos are: apple/swift, twbs/bootstrap, Microsoft/vscode, facebook/react, tensorflow/tensorflow.; remote scorer reported passed_queries=1 and passed_trials=1."
+  },
+  {
+    "date": "2026-04-18",
+    "run_type": "GitHub Repos 50-trial rerun interrupted",
+    "command": "ssh gersum@100.101.234.123 \"cd /shared/DataAgentBench/oracle_forge_v3 && source .venv/bin/activate && REMOTE_SANDBOX_ENABLED=true REMOTE_SANDBOX_HOST=localhost REMOTE_SANDBOX_PYTHON=/usr/bin/python3 timeout 7200 python3 eval/run_benchmark.py --agent src.agent.orchestrator --trials 50 --output results/gpt5_github_repos_q2_q4_trials50.json --datasets GITHUB_REPOS --query-ids 2,3,4 --remote-host localhost --remote-dab-path /shared/DataAgentBench\"",
+    "dataset": "GITHUB_REPOS",
+    "query_id": "2,3,4",
+    "iterations": null,
+    "trials": 50,
+    "score": "interrupted",
+    "pass_at_1": null,
+    "trial_pass_rate": null,
+    "is_valid": false,
+    "tool_trace": [],
+    "notes": "Detached tmux run launched on the team host, but SSH connectivity dropped before a result JSON was written. No benchmark artifact was produced for this rerun."
   }
 ]

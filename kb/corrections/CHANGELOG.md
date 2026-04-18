@@ -44,3 +44,20 @@ The shared server produced the following verified outputs:
 Status: pass
 
 Last verified: 2026-04-14
+
+## [2026-04-18]
+
+- Extended the corrections log with the final Yelp regression evidence so the failure history reflects the actual repaired behaviors rather than just the initial bugs.
+- The resolved Yelp fixes now cover:
+  - exact city/state lookup before description fallback
+  - `businessid_*` -> `businessref_*` join normalization
+  - integer answer emission for q3
+  - category extraction fallback for q6
+- Confirmed the end-to-end remote-local DAB sweep passes all seven Yelp queries across 50 trials each, with the accepted outputs:
+  - q1: `3.55`
+  - q2: `PA, 3.70`
+  - q3: `35`
+  - q4: `Restaurant, 3.63`
+  - q5: `PA, 3.48`
+  - q6: `Coffee House Too Cafe, Restaurants, Breakfast & Brunch, American (New), Cafes`
+  - q7: `Restaurants, Food, American (New), Shopping, Breakfast & Brunch`

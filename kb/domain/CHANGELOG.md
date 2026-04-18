@@ -41,3 +41,16 @@ Last verified: 2026-04-14
 
 Notes:
 - Verified on the shared server after syncing the remote local Yelp data bundle and updating the agent prompt/fast path.
+
+## [2026-04-18]
+
+- Added the final remote-local Yelp verification sweep to the domain KB notes so the actual q1-q7 outputs are recorded alongside the business identity and category rules.
+- Confirmed the benchmark outputs now match the known accepted answers under 50 trials each:
+  - q1: `3.55`
+  - q2: `PA, 3.70`
+  - q3: `35`
+  - q4: `Restaurant, 3.63`
+  - q5: `PA, 3.48`
+  - q6: `Coffee House Too Cafe, Restaurants, Breakfast & Brunch, American (New), Cafes`
+  - q7: `Restaurants, Food, American (New), Shopping, Breakfast & Brunch`
+- Re-verified the key domain rules: exact city/state matching first, `businessid_*` -> `businessref_*` normalization for review joins, category extraction stable enough for validator acceptance.

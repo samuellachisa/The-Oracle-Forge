@@ -1,0 +1,63 @@
+{
+  "team": "gpt5",
+  "benchmark": "DataAgentBench",
+  "dataset": "yelp",
+  "trials_per_query": 50,
+  "overall": {
+    "pass_at_1": 1.0,
+    "trial_pass_rate": 1.0,
+    "passed_queries": 7,
+    "total_queries": 7
+  },
+  "queries": [
+    {
+      "query_id": 1,
+      "result_file": "results/gpt5_yelp_q1_trials50.json",
+      "pass_at_1": 1.0,
+      "trial_pass_rate": 1.0,
+      "final_answer": "3.55"
+    },
+    {
+      "query_id": 2,
+      "result_file": "results/gpt5_yelp_q2_trials50.json",
+      "pass_at_1": 1.0,
+      "trial_pass_rate": 1.0,
+      "final_answer": "PA, 3.70"
+    },
+    {
+      "query_id": 3,
+      "result_file": "results/gpt5_yelp_q3_trials50.json",
+      "pass_at_1": 1.0,
+      "trial_pass_rate": 1.0,
+      "final_answer": "35"
+    },
+    {
+      "query_id": 4,
+      "result_file": "results/gpt5_yelp_q4_trials50.json",
+      "pass_at_1": 1.0,
+      "trial_pass_rate": 1.0,
+      "final_answer": "Restaurant, 3.63"
+    },
+    {
+      "query_id": 5,
+      "result_file": "results/gpt5_yelp_q5_trials50.json",
+      "pass_at_1": 1.0,
+      "trial_pass_rate": 1.0,
+      "final_answer": "PA, 3.48"
+    },
+    {
+      "query_id": 6,
+      "result_file": "results/gpt5_yelp_q6_trials50.json",
+      "pass_at_1": 1.0,
+      "trial_pass_rate": 1.0,
+      "final_answer": "Coffee House Too Cafe, Restaurants, Breakfast & Brunch, American (New), Cafes"
+    },
+    {
+      "query_id": 7,
+      "result_file": "results/gpt5_yelp_q7_trials50.json",
+      "pass_at_1": 1.0,
+      "trial_pass_rate": 1.0,
+      "final_answer": "Restaurants, Food, American (New), Shopping, Breakfast & Brunch"
+    }
+  ]
+}

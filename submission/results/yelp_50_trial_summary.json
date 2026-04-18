@@ -1,0 +1,63 @@
+{
+  "benchmark": "DataAgentBench Yelp",
+  "dataset": "yelp",
+  "trials_per_query": 50,
+  "queries": [
+    {
+      "query_id": 1,
+      "result_file": "results/gpt5_yelp_q1_trials50.json",
+      "total_queries": 1,
+      "total_trials": 50,
+      "pass_at_1": 1.0,
+      "passed_queries": 1
+    },
+    {
+      "query_id": 2,
+      "result_file": "results/gpt5_yelp_q2_trials50.json",
+      "total_queries": 1,
+      "total_trials": 50,
+      "pass_at_1": 1.0,
+      "passed_queries": 1
+    },
+    {
+      "query_id": 3,
+      "result_file": "results/gpt5_yelp_q3_trials50.json",
+      "total_queries": 1,
+      "total_trials": 50,
+      "pass_at_1": 1.0,
+      "passed_queries": 1
+    },
+    {
+      "query_id": 4,
+      "result_file": "results/gpt5_yelp_q4_trials50.json",
+      "total_queries": 1,
+      "total_trials": 50,
+      "pass_at_1": 1.0,
+      "passed_queries": 1
+    },
+    {
+      "query_id": 5,
+      "result_file": "results/gpt5_yelp_q5_trials50.json",
+      "total_queries": 1,
+      "total_trials": 50,
+      "pass_at_1": 1.0,
+      "passed_queries": 1
+    },
+    {
+      "query_id": 6,
+      "result_file": "results/gpt5_yelp_q6_trials50.json",
+      "total_queries": 1,
+      "total_trials": 50,
+      "pass_at_1": 1.0,
+      "passed_queries": 1
+    },
+    {
+      "query_id": 7,
+      "result_file": "results/gpt5_yelp_q7_trials50.json",
+      "total_queries": 1,
+      "total_trials": 50,
+      "pass_at_1": 1.0,
+      "passed_queries": 1
+    }
+  ]
+}

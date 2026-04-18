@@ -32,3 +32,8 @@ Verified against the live Yelp q1 run path launched with `python3 run_agent.py -
 Status: pass
 
 Last verified: 2026-04-14
+
+## [2026-04-18]
+- Documented the remote-local Yelp regression sweep in the architecture KB so the live agent loop evidence stays aligned with the layered context design.
+- Recorded the 50-trial `yelp` query sweep (`q1` through `q7`) as the authoritative smoke validation for the current Oracle Forge runtime. All seven queries passed with `pass_at_1=1.0` and `trial_pass_rate=1.0`.
+- Confirmed the live run path still uses `common_scaffold/DataAgent.py` with the remote sandbox / DAB adapter bridge, while the Yelp-specific fast path keeps the benchmark answers stable on the shared server.

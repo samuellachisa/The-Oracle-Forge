@@ -36,3 +36,20 @@ Verified on the shared server:
 Status: pass
 
 Last verified: 2026-04-14
+
+## [2026-04-18]
+
+- Added the final Yelp benchmark evidence to the evaluation KB so the submission record reflects the actual 50-trial results rather than only the smoke runs.
+- Confirmed the benchmark contract on the remote-local path:
+  - q1 through q7 all passed
+  - `pass_at_1 = 1.0`
+  - `trial_pass_rate = 1.0`
+  - `passed_trials = 50` for each query
+- Recorded the benchmark-accepted answers for the final submission bundle:
+  - q1: `3.55`
+  - q2: `PA, 3.70`
+  - q3: `35`
+  - q4: `Restaurant, 3.63`
+  - q5: `PA, 3.48`
+  - q6: `Coffee House Too Cafe, Restaurants, Breakfast & Brunch, American (New), Cafes`
+  - q7: `Restaurants, Food, American (New), Shopping, Breakfast & Brunch`
