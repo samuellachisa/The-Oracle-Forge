@@ -2,19 +2,6 @@
 
 Track score progression from first baseline to final submission.
 
-## Template
-
-```md
-## YYYY-MM-DD
-Run type:
-Command:
-Dataset scope:
-Iterations:
-Trials:
-Score:
-Notes:
-```
-
 ## 2026-04-11
 Run type: Remote DAB smoke validation
 Command: `python run_benchmark_query.py --dataset yelp --query-id 1 --validate-answer`
