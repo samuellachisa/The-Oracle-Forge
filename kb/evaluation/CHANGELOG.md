@@ -53,3 +53,9 @@ Last verified: 2026-04-14
   - q5: `PA, 3.48`
   - q6: `Coffee House Too Cafe, Restaurants, Breakfast & Brunch, American (New), Cafes`
   - q7: `Restaurants, Food, American (New), Shopping, Breakfast & Brunch`
+
+## [2026-04-18]
+
+- Added the CRM q1-q13 verification sweep to the evaluation KB so the score history now includes the full CRM family closure.
+- Recorded that the live CRM remote-local path passes q1 through q13 with validator-accepted outputs.
+- This closes the evaluation evidence loop for the CRM family alongside the earlier Yelp 50-trial records and the GitHub Repos smoke evidence.
